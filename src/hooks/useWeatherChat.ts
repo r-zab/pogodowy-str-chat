@@ -42,22 +42,14 @@ export function useWeatherChat() {
     setIsLoading(true);
 
     try {
-      // MOCK RESPONSE - Replace with real API call
-      // Simulating network delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Mock bot response
-      const botResponse = "To jest przykładowa odpowiedź interfejsu. Połącz mnie z backendem!";
-
-      /* UNCOMMENT TO CONNECT TO REAL BACKEND:
-      const response = await fetch("http://localhost:8000/chat", {
+      const response = await fetch("http://127.0.0.1:8000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           message: text.trim(),
-          session_id: sessionId,
+          session_id: "session_abc",
         }),
       });
 
@@ -67,7 +59,6 @@ export function useWeatherChat() {
 
       const data = await response.json();
       const botResponse = data.response;
-      */
 
       const botMessage: Message = {
         id: `bot_${Date.now()}`,
