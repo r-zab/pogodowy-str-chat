@@ -5,19 +5,24 @@ import { QuickActions } from "@/components/chat/QuickActions";
 import { Card } from "@/components/ui/card";
 import { Shield } from "lucide-react";
 import weatherShield from "@/assets/weather-shield.png";
+import weatherBg from "@/assets/weather-bg.jpg";
 
 const Index = () => {
   const { messages, isLoading, sendMessage, messagesEndRef } = useWeatherChat();
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/20 animate-gradient-shift" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${weatherBg})` }}
+      />
+      <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-card/40 via-transparent to-primary/30 animate-gradient-shift" />
       
       {/* Floating orbs for decoration */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float-delayed" />
 
       <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px] relative z-10">
         {/* Header */}
