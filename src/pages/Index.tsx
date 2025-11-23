@@ -63,7 +63,7 @@ const Index = () => {
 
         {/* Footer hint */}
         <p className="text-xs text-center text-muted-foreground/60 mt-4 animate-fade-in [animation-delay:0.5s]">
-          Interfejs gotowy do połączenia z backendem Python
+          projekt copyright SIWB
         </p>
       </div>
     </div>
