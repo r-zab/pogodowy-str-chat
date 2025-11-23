@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# Pogodowy Stróż - Interfejs Użytkownika
 
-## Project info
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Lovable](https://img.shields.io/badge/Generated%20by-Lovable-ff0055?style=for-the-badge)
 
-**URL**: https://lovable.dev/projects/682fa2cc-840c-43ce-98ab-8c4aa9134a10
+Oficjalny klient webowy dla systemu "Pogodowy Stróż". Jest to nowoczesna aplikacja typu SPA (Single Page Application), stworzona przy użyciu platformy Lovable, zapewniająca estetyczny i intuicyjny interfejs czatu do komunikacji z asystentem pogodowym.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌟 Kluczowe Funkcjonalności
 
-**Use Lovable**
+Interfejs został zaprojektowany z myślą o jak najlepszym User Experience (UX):
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/682fa2cc-840c-43ce-98ab-8c4aa9134a10) and start prompting.
+* **Nowoczesny Design (Glassmorphism):** Przejrzysty, lekki interfejs inspirowany aplikacjami typu Messenger/iMessage, wykorzystujący nowoczesne komponenty **shadcn/ui**.
+* **Interaktywny Czat:**
+    * Płynne animacje pojawiania się wiadomości.
+    * Wskaźnik "pisania" (typing indicator) symulujący myślenie bota.
+    * Rozróżnienie kolorystyczne wiadomości użytkownika i bota.
+* **Responsywność (RWD):** Aplikacja działa idealnie zarówno na komputerach stacjonarnych, jak i urządzeniach mobilnych.
+* **Dynamiczne Połączenie:** Komunikuje się w czasie rzeczywistym z backendem Python (FastAPI) poprzez REST API.
+* **Obsługa Błędów:** Eleganckie powiadomienia (Toasts) w przypadku problemów z połączeniem lub brakiem danych.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 💻 Stos Technologiczny
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Aplikacja opiera się na najnowszych standardach webowych:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* **Framework:** [React](https://react.dev/) 18
+* **Build Tool:** [Vite](https://vitejs.dev/) (Błyskawiczne ładowanie i budowanie)
+* **Język:** [TypeScript](https://www.typescriptlang.org/) (Dla bezpieczeństwa typów)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Utility-first CSS)
+* **Ikony:** [Lucide React](https://lucide.dev/)
+* **Komponenty UI:** shadcn/ui + Radix UI
+* **Generacja:** [Lovable.dev](https://lovable.dev/)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Uruchomienie Projektu
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Aby uruchomić interfejs, musisz mieć zainstalowane środowisko Node.js oraz działający backend.
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Wymagania Wstępne
+1.  **Node.js** (wersja 18 lub nowsza) – [Pobierz tutaj](https://nodejs.org/).
+2.  **Działający Backend** "Pogodowy Stróż" (uruchomiony na porcie 8000).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Instrukcja Krok po Kroku
+
+#### 1. Instalacja zależności
+Otwórz terminal w folderze projektu (`frontend-lovable`) i wpisz:
+
+```bash
+  npm install
 ```
 
-**Edit a file directly in GitHub**
+#### 2. Uruchomienie serwera deweloperskiego
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Aby włączyć podgląd aplikacji, wpisz w terminalu:
 
-**Use GitHub Codespaces**
+```bash
+  npm run dev
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+#### 3. Otwórz aplikację
 
-This project is built with:
+Terminal wyświetli adres lokalny. Kliknij go lub wpisz w przeglądarce:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+👉 [http://localhost:5173](http://localhost:5173)
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/682fa2cc-840c-43ce-98ab-8c4aa9134a10) and click on Share -> Publish.
+### 🔌 Konfiguracja Połączenia
 
-## Can I connect a custom domain to my Lovable project?
+Domyślnie frontend jest skonfigurowany do łączenia się z API pod adresem:
 
-Yes, you can!
+[http://127.0.0.1:8000/chat](http://127.0.0.1:8000/chat)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Jeśli Twój backend działa na innym porcie lub adresie, edytuj plik:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+`src/pages/Index.tsx` (lub odpowiedni plik w `src/hooks/`), zmieniając adres w funkcji fetch.
+
+---
+
+### 🆘 Rozwiązywanie Problemów
+
+| **Problem**                       | **Rozwiązanie**                                                        |
+|------------------------------------|------------------------------------------------------------------------|
+| Network Error / Brak odpowiedzi    | Sprawdź, czy backend działa w drugim oknie terminala.                  |
+| Błąd CORS                         | Dodaj `CORSMiddleware` z `allow_origins=["*"]` w pliku `main.py`.      |
+| `npm run dev` nie działa           | Zainstaluj zależności: `npm install`.                                  |
+
+---
+
+## Autorzy
+
+Frontend wygenerowany przy wsparciu AI (Lovable), zintegrowany z autorskim backendem Python.
