@@ -10,27 +10,35 @@ const Index = () => {
   const { messages, isLoading, sendMessage, messagesEndRef } = useWeatherChat();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-accent/20">
-      <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px]">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/20 animate-gradient-shift" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      
+      {/* Floating orbs for decoration */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
+
+      <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px] relative z-10">
         {/* Header */}
-        <header className="text-center py-6 px-4">
+        <header className="text-center py-6 px-4 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-2">
             <img 
               src={weatherShield} 
               alt="Weather Shield" 
-              className="w-12 h-12 drop-shadow-lg"
+              className="w-12 h-12 drop-shadow-2xl animate-float"
             />
-            <h1 className="text-3xl font-bold text-foreground">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Pogodowy Stróż
             </h1>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground animate-fade-in [animation-delay:0.2s]">
             Twoje centrum informacji meteo i hydro
           </p>
         </header>
 
         {/* Chat Container */}
-        <Card className="flex-1 flex flex-col overflow-hidden shadow-xl border-border/50">
+        <Card className="flex-1 flex flex-col overflow-hidden shadow-2xl border-border/50 bg-card/80 backdrop-blur-xl animate-scale-in">
           <MessageList 
             messages={messages} 
             isLoading={isLoading} 
@@ -47,7 +55,7 @@ const Index = () => {
         </Card>
 
         {/* Footer hint */}
-        <p className="text-xs text-center text-muted-foreground/60 mt-4">
+        <p className="text-xs text-center text-muted-foreground/60 mt-4 animate-fade-in [animation-delay:0.5s]">
           Interfejs gotowy do połączenia z backendem Python
         </p>
       </div>

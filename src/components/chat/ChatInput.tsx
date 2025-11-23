@@ -26,7 +26,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 p-4">
+    <div className="border-t bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 p-4">
       <div className="flex items-center gap-2 max-w-3xl mx-auto">
         <Input
           value={input}
@@ -34,13 +34,13 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
           onKeyPress={handleKeyPress}
           placeholder="Zapytaj o pogodę, ostrzeżenia lub stan wód..."
           disabled={disabled}
-          className="flex-1 rounded-full bg-accent border-border/50 focus-visible:ring-primary"
+          className="flex-1 rounded-full bg-accent/50 backdrop-blur-sm border-border/50 focus-visible:ring-primary transition-all duration-300 focus-visible:shadow-lg"
         />
         <Button
           onClick={handleSend}
           disabled={disabled || !input.trim()}
           size="icon"
-          className="rounded-full h-10 w-10 shrink-0"
+          className="rounded-full h-10 w-10 shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
           <ArrowUp className="h-5 w-5" />
         </Button>
