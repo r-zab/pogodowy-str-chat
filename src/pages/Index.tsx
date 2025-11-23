@@ -62,7 +62,7 @@ const Index = () => {
         </Card>
 
         {/* Footer hint */}
-        <p className="text-xs text-center text-muted-foreground/60 mt-4 animate-fade-in [animation-delay:0.5s]">
+        <p className="text-xs text-center text-white drop-shadow-md mt-4 animate-fade-in [animation-delay:0.5s]">
           Projekt © SIWB 2025
         </p>
       </div>
