@@ -26,18 +26,20 @@ const Index = () => {
 
       <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px] relative z-10">
         {/* Header */}
-        <header className="text-center py-6 px-4 animate-fade-in">
+        <header className="text-center py-6 px-4 animate-fade-in bg-card/60 backdrop-blur-xl rounded-2xl shadow-2xl mb-4">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <img 
-              src={weatherShield} 
-              alt="Weather Shield" 
-              className="w-12 h-12 drop-shadow-2xl animate-float"
-            />
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-xl shadow-lg">
+              <img 
+                src={weatherShield} 
+                alt="Weather Shield" 
+                className="w-12 h-12 drop-shadow-2xl animate-float"
+              />
+            </div>
+            <h1 className="text-3xl font-bold text-foreground drop-shadow-lg">
               Pogodowy Stróż
             </h1>
           </div>
-          <p className="text-sm text-muted-foreground animate-fade-in [animation-delay:0.2s]">
+          <p className="text-sm text-foreground/90 font-medium animate-fade-in [animation-delay:0.2s] drop-shadow-md">
             Twoje centrum informacji meteo i hydro
           </p>
         </header>
