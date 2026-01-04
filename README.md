@@ -95,6 +95,10 @@ Jeśli Twój backend działa na innym porcie lub adresie, edytuj plik:
 
 ---
 
-## Autorzy
+## 👥 Autorzy
 
 Frontend wygenerowany przy wsparciu AI (Lovable), zintegrowany z autorskim backendem Python.
+
+## 📄 Licencja
+
+MIT License
