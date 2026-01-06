@@ -6,9 +6,11 @@ interface QuickActionsProps {
 }
 
 const quickActions = [
-  { label: "Pogoda w Warszawie", message: "Pogoda w Warszawie" },
-  { label: "Ostrzeżenia Poznań", message: "Ostrzeżenia dla Poznania" },
-  { label: "Stan wody Wisła", message: "Stan wody w Wiśle" },
+  { label: "🌤️ Pogoda Warszawa", message: "Pogoda Warszawa" },
+  { label: "🌡️ Pogoda Lublin", message: "Pogoda Lublin" },
+  { label: "⚠️ Alerty Suwałki", message: "Ostrzeżenia Suwałki" },
+  { label: "💧 Wisła", message: "Stan wody Wisła" },
+  { label: "🏞️ Odra", message: "Stan wody Odra" },
 ];
 
 export function QuickActions({ onQuickAction, disabled }: QuickActionsProps) {
