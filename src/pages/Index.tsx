@@ -14,15 +14,19 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
         style={{ backgroundImage: `url(${weatherBg})` }}
       />
-      <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-card/40 via-transparent to-primary/30 animate-gradient-shift" />
+      <div className="absolute inset-0 bg-primary/30 backdrop-blur-[3px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-card/50 via-primary/20 to-secondary/40 animate-gradient-shift" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/10 to-transparent animate-gradient-shift [animation-delay:-4s]" />
       
-      {/* Floating orbs for decoration */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float-delayed" />
+      {/* Flowing animated orbs */}
+      <div className="absolute top-10 left-5 w-80 h-80 bg-primary/30 animate-float" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-secondary/20 animate-float-delayed" />
+      <div className="absolute bottom-10 left-1/4 w-72 h-72 bg-primary/25 animate-float [animation-delay:-2s]" />
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-accent/30 animate-float-delayed [animation-delay:-3s]" />
+      <div className="absolute top-1/2 left-10 w-48 h-48 bg-primary/20 animate-float [animation-delay:-4s]" />
 
       <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px] relative z-10">
         {/* Header */}
