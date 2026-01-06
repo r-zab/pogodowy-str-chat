@@ -3,20 +3,15 @@ import { MessageList } from "@/components/chat/MessageList";
 import { ChatInput } from "@/components/chat/ChatInput";
 import { QuickActions } from "@/components/chat/QuickActions";
 import { Card } from "@/components/ui/card";
-import { Shield } from "lucide-react";
-import weatherShield from "@/assets/weather-shield.png";
-import weatherBg from "@/assets/weather-bg.jpg";
+import { Shield, Sun, Cloud } from "lucide-react";
 
 const Index = () => {
   const { messages, isLoading, sendMessage, messagesEndRef } = useWeatherChat();
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-        style={{ backgroundImage: `url(${weatherBg})` }}
-      />
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent scale-110 animate-gradient-shift" />
       <div className="absolute inset-0 bg-primary/30 backdrop-blur-[3px]" />
       <div className="absolute inset-0 bg-gradient-to-br from-card/50 via-primary/20 to-secondary/40 animate-gradient-shift" />
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/10 to-transparent animate-gradient-shift [animation-delay:-4s]" />
@@ -32,12 +27,10 @@ const Index = () => {
         {/* Header */}
         <header className="text-center py-6 px-4 animate-fade-in bg-card/60 backdrop-blur-xl rounded-2xl shadow-2xl mb-4">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-xl shadow-lg">
-              <img 
-                src={weatherShield} 
-                alt="Weather Shield" 
-                className="w-12 h-12 drop-shadow-2xl animate-float"
-              />
+            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-xl shadow-lg relative">
+              <Shield className="w-12 h-12 text-primary drop-shadow-2xl animate-float" />
+              <Sun className="w-5 h-5 text-yellow-500 absolute -top-1 -right-1 animate-pulse" />
+              <Cloud className="w-4 h-4 text-muted-foreground absolute -bottom-1 -left-1" />
             </div>
             <h1 className="text-3xl font-bold text-foreground drop-shadow-lg">
               Pogodowy Stróż
