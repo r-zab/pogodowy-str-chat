@@ -39,13 +39,11 @@ const Index = () => {
         {/* Header */}
         <header className="text-center py-6 px-4 animate-fade-in bg-card/60 backdrop-blur-xl rounded-2xl shadow-2xl mb-4">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-xl shadow-lg">
-              <img 
-                src={weatherIcon} 
-                alt="Pogodowy Stróż" 
-                className="w-12 h-12 drop-shadow-2xl animate-float"
-              />
-            </div>
+            <img 
+              src={weatherIcon} 
+              alt="Pogodowy Stróż" 
+              className="w-12 h-12"
+            />
             <h1 className="text-3xl font-bold text-foreground drop-shadow-lg">
               Pogodowy Stróż
             </h1>
