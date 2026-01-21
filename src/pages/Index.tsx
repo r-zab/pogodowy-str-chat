@@ -5,6 +5,7 @@ import { QuickActions } from "@/components/chat/QuickActions";
 import { Card } from "@/components/ui/card";
 import weatherIcon from "@/assets/weather-icon.png";
 import weatherBg from "@/assets/weather-bg.jpg";
+import RainEffect from "@/components/RainEffect";
 import { Sun, Cloud, CloudRain, Snowflake, Wind, CloudLightning, Droplets } from "lucide-react";
 
 const Index = () => {
@@ -20,6 +21,9 @@ const Index = () => {
       {/* Overlay Effects */}
       <div className="absolute inset-0 bg-primary/20" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/30" />
+      
+      {/* Rain Effect */}
+      <RainEffect />
       
       {/* Flowing animated orbs */}
       <div className="absolute top-10 left-5 w-80 h-80 bg-primary/30 animate-float" />
