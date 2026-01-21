@@ -4,6 +4,7 @@ import { ChatInput } from "@/components/chat/ChatInput";
 import { QuickActions } from "@/components/chat/QuickActions";
 import { Card } from "@/components/ui/card";
 import weatherIcon from "@/assets/weather-icon.png";
+import weatherBg from "@/assets/weather-bg.jpg";
 import { Sun, Cloud, CloudRain, Snowflake, Wind, CloudLightning, Droplets } from "lucide-react";
 
 const Index = () => {
@@ -11,11 +12,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent scale-110 animate-gradient-shift" />
-      <div className="absolute inset-0 bg-primary/30 backdrop-blur-[3px]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-card/50 via-primary/20 to-secondary/40 animate-gradient-shift" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/10 to-transparent animate-gradient-shift [animation-delay:-4s]" />
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${weatherBg})` }}
+      />
+      {/* Overlay Effects */}
+      <div className="absolute inset-0 bg-primary/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/30" />
       
       {/* Flowing animated orbs */}
       <div className="absolute top-10 left-5 w-80 h-80 bg-primary/30 animate-float" />
