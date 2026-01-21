@@ -4,6 +4,7 @@ import { ChatInput } from "@/components/chat/ChatInput";
 import { QuickActions } from "@/components/chat/QuickActions";
 import { Card } from "@/components/ui/card";
 import weatherIcon from "@/assets/weather-icon.png";
+import { Sun, Cloud, CloudRain, Snowflake, Wind, CloudLightning, Droplets } from "lucide-react";
 
 const Index = () => {
   const { messages, isLoading, sendMessage, messagesEndRef } = useWeatherChat();
@@ -22,6 +23,17 @@ const Index = () => {
       <div className="absolute bottom-10 left-1/4 w-72 h-72 bg-primary/25 animate-float [animation-delay:-2s]" />
       <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-accent/30 animate-float-delayed [animation-delay:-3s]" />
       <div className="absolute top-1/2 left-10 w-48 h-48 bg-primary/20 animate-float [animation-delay:-4s]" />
+
+      {/* Floating Weather Icons */}
+      <Sun className="absolute top-16 right-20 w-16 h-16 text-yellow-400/40 animate-float [animation-delay:-1s] drop-shadow-lg" />
+      <Cloud className="absolute top-28 left-16 w-20 h-20 text-foreground/20 animate-float-delayed [animation-delay:-2s]" />
+      <CloudRain className="absolute bottom-32 right-12 w-14 h-14 text-primary/30 animate-float [animation-delay:-3s]" />
+      <Snowflake className="absolute top-1/4 right-1/3 w-10 h-10 text-sky-300/30 animate-float-delayed [animation-delay:-4s]" />
+      <Wind className="absolute bottom-1/4 left-20 w-12 h-12 text-foreground/15 animate-float [animation-delay:-5s]" />
+      <CloudLightning className="absolute top-1/2 right-16 w-14 h-14 text-yellow-500/25 animate-float-delayed [animation-delay:-1.5s]" />
+      <Droplets className="absolute bottom-20 left-1/3 w-10 h-10 text-primary/25 animate-float [animation-delay:-2.5s]" />
+      <Cloud className="absolute bottom-1/2 right-1/4 w-16 h-16 text-foreground/15 animate-float-delayed [animation-delay:-3.5s]" />
+      <Sun className="absolute bottom-16 right-1/3 w-12 h-12 text-yellow-400/30 animate-float [animation-delay:-4.5s]" />
 
       <div className="w-full max-w-2xl flex flex-col h-[90vh] max-h-[800px] relative z-10">
         {/* Header */}
